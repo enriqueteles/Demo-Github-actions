@@ -25,5 +25,3 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install (DEMO GITHUB ACTIONS)
       run: npm install
-    - name: Test (DEMO GITHUB ACTIONS)
-      run: npm test

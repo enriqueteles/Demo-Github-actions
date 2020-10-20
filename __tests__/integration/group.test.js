@@ -11,6 +11,10 @@ describe('Groups', () => {
             .clean(connection, { ignoreTables: ['knex_migrations', 'knex_migrations_lock'] })
     });
 
+    afterAll(done => {
+        connection.destroy();
+    })
+
     it('deve ser possível criar um novo grupo', async () => {
         const response = await request(app)
             .post('/groups')

@@ -10,6 +10,10 @@ describe('Presentations', () => {
         knexCleaner
             .clean(connection, { ignoreTables: ['knex_migrations', 'knex_migrations_lock'] })
     });
+    
+    afterAll(done => {
+        connection.destroy();
+    })
 
     it('deve ser possível criar uma apresenção linkada a um grupo', async () => {
         const responseGroup = await request(app)

@@ -7,7 +7,7 @@
     "start": "node src/server.js",
     "pretest": "NODE_ENV=test knex migrate:latest --env testing",
     "test": "NODE_ENV=test jest",
-    "posttest": "NODE_ENV=test knex migrate:rollback",
+    "posttest": "NODE_ENV=test knex migrate:rollback --env testing",
     "dev": "nodemon src/server.js --ignore __tests__",
     "knex:migrate": "knex migrate:latest"
   },

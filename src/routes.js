@@ -1,15 +1,15 @@
 const express = require('express');
 
-const GroupController = require('./controllers/GroupController');
+const { indexGroup, createGroup, deleteGroup }= require('./controllers/GroupController');
 const PresentationController = require('./controllers/PresentationController');
 
 const connection = require('./database/connection');
 
 const routes = express.Router();
 
-routes.get('/groups', GroupController.index);
-routes.post('/groups', GroupController.create);
-routes.delete('/groups/:id', GroupController.delete);
+routes.get('/groups', indexGroup);
+routes.post('/groups', createGroup);
+routes.delete('/groups/:id', deleteGroup);
 
 routes.get('/presentations', PresentationController.index);
 routes.post('/presentations', PresentationController.create);
